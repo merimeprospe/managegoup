@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if request.user.is_authenticated%}
+    <p>salut {{request.user}}</p>
+    <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+        <p>vous n'avez pas de compte</p>
+    {% endif%}
+
+    <br>
+    <table border="1px">
+     {% for p in projet %}
+        <br>
+    <tr>
+        <td>
+             {{p.theme}}
+        </td>
+        <td>
+            <a href="{% url 'modif_p' p.id %}" style="text-decoration: none; color: antiquewhite;" >modifie</a>
+        </td>
+        <td>
+            <a href="{% url 'delet_p' p.id %}" style="text-decoration: none; color: antiquewhite;">Supprimer</a>
+        </td>
+    </tr>
+
+     {% endfor %}
+    </table>
+    <br>
+<form action="#" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <input type="submit" value="Creer">
+
+</form>
+</body>
+</html>

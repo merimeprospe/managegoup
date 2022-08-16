@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for message in messages %}
+     <div class="alert alert-{{message}} alert-dismissible fade show" role="alert">
+         <strong>Message:</strong>{{ message }}
+         <button type="button" class="close" date-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+         </button>
+     </div>
+    {% endfor %}
+
+    {% if request.user.is_authenticated%}
+    <p>salut {{request.user}}</p>
+    <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+        <p>vous n'avez pas de compte</p>
+        <button type="submit"><a href="{% url 'cree_p' %}"> cree un compte</a></button>
+        <button type="submit"><a href="{% url 'login' %}"> ce connecte</a></button>
+    {% endif%}
+
+</body>
+</html>

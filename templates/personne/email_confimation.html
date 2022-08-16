@@ -1,0 +1,11 @@
+ {% autoescape off %}
+
+ welcome to manage login
+
+ Hello {{request.user}}!
+
+ svp confirmer votre email pas clic sur ce lien
+
+ confirmation du email: http://{{ domain }}{% url 'activate' uid64=uid token=token %}
+
+ {% endautoescape%}

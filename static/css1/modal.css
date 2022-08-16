@@ -1,0 +1,58 @@
+
+button{
+    width: 33%;
+    background-color: #2196F3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal{
+    width: 50%;
+    height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 30px 70px rgba(0,0,0,0.3);
+}
+
+
+span:hover{
+    color: #2b8fdb
+}
+
+span{
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 20px;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+
+/* se qui gere le modal*/
+.modal{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s;
+}
+
+button:focus + .modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+.positionement{
+    display:flex;
+}

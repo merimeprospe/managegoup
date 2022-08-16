@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"></head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <title>Tuto Graven - Boutique de plantes</title>
+    <link href="{% static 'css/main.d810cf0ae7f39f28f336.css' %}" rel="stylesheet"></head>
+    <style>
+        .home-container {
+            min-height: 100vh;
+            background: url("{% static 'images/index.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="home" class="home-container">
+        <header id="header" class="header">
+            <img src="{% static 'images/log.svg' %}" alt="Nature Emoi" class="logo">
+            <ul class="nav-links">
+                <li>
+                    <a href="{% url 'cree_p' %}" data-text="cree un compte" style="font-size:20px" >cree un compte</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}" data-text="ce connecte" style="font-size:20px">se connecté</a>
+                </li>
+            </ul>
+            <div class="burger-container">
+                <div class="burger"></div>
+            </div>
+        </header>
+        <div class="landing">
+            <div style="margin-top: 150px;">
+                <h1 class="big-title ">Managegroupe, Plate forme De travaille.</h1>
+            </div>
+            <div class="divider row" style="margin-top: 100px;"></div>
+            <div class="d-flex align-items-center">
+                <div class="ml-auto">
+                    <a href="{% url 'cree_p' %}">
+                        <button type="submit" class="btn btn-primary btn-lg bg-plum-plate">cree un compte</button>
+                    </a>
+                    <a href="{% url 'login' %}">
+                        <button type="submit" class="btn btn-primary btn-lg bg-plum-plate">se connecté</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const burgerContainer = document.querySelector('.burger-container');
+        const navLinks = document.querySelector('.nav-links');
+
+        burgerContainer.addEventListener('click', () => {
+            burgerContainer.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        })
+    </script>
+</body>
+
+</html>
